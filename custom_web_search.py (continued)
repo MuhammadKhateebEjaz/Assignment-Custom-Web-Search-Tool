@@ -1,0 +1,18 @@
+# custom_web_search.py (continued)
+
+# ---------------------------
+# Web Search Agent
+# ---------------------------
+agent = Agent(
+    client=client,
+    name="WebSearchAgent",
+    instructions="You are a helpful assistant that answers queries by searching the web using the Tavily API.",
+    tools=[tavily_search],
+    model="gpt-4.1"
+)
+
+# Example run
+if __name__ == "__main__":
+    query = "Latest news about AI regulation in 2025"
+    response = agent.run(query)
+    print("Agent response:\n", response.output_text)
